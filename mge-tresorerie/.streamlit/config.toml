@@ -1,0 +1,13 @@
+# Données en local uniquement : serveur accessible depuis ce poste seulement, sans télémétrie.
+[server]
+address = "localhost"
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#0b1f3a"
+
+[client]
+toolbarMode = "minimal"
