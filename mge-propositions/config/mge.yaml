@@ -1,0 +1,29 @@
+# Paramètres du cabinet et conditions contractuelles.
+# Tout champ vide apparaît dans les documents sous la forme « [À compléter] ».
+
+cabinet:
+  nom_commercial: MGE Conseil
+  denomination_sociale: ""
+  forme_juridique: ""
+  capital_social: ""
+  ridet: ""
+  rcs: ""
+  adresse: ""
+  code_postal: ""
+  ville: Nouméa
+  email: ""
+  telephone: ""
+  signataire: ""
+  qualite_signataire: ""
+
+conditions:
+  # Taux de TGC appliqué aux honoraires, en % : 6 % (prestations de service), validé le 17/11/2026.
+  taux_tgc: "6"
+  delai_paiement_jours: 15
+  engagement_mois: 6          # offres mensuelles uniquement
+  preavis_mois: 1             # offres mensuelles, après la période d'engagement
+  validite_proposition_jours: 30
+  confidentialite_annees: 3   # durée de l'obligation de confidentialité après la fin de la mission
+  facturation_mensuelle: "Les honoraires sont facturés mensuellement, en début de mois."
+  facturation_forfait: "Les honoraires sont facturés pour 50 % à la signature et pour 50 % à la remise des livrables."
+  penalites_retard: ""        # ex. taux des pénalités de retard — à faire valider

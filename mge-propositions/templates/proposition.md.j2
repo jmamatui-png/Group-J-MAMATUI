@@ -1,0 +1,73 @@
+# Proposition commerciale
+
+**{{ offre.nom }}** — {{ client.raison_sociale }}
+
+Référence : **{{ numero }}** · Nouméa, le {{ date_document | date_fr }}
+
+## 1. Votre entreprise
+
+| Élément | Information |
+|---|---|
+| Raison sociale | {{ client.raison_sociale }} |
+| RIDET | {{ client.ridet }} |
+| Dirigeant | {{ client.dirigeant }}{% if client.qualite_dirigeant %}, {{ client.qualite_dirigeant }}{% endif %} |
+| Secteur d'activité | {{ client.secteur }} |
+| Chiffre d'affaires annuel (HT) | {{ client.chiffre_affaires | xpf }} |
+
+## 2. Vos enjeux
+
+Lors de nos échanges, vous nous avez fait part des enjeux suivants :
+
+{% for e in client.enjeux %}
+- {{ e }}
+{% endfor %}
+
+## 3. Notre proposition : {{ offre.nom }}
+
+{{ offre.description }}
+
+**Livrables :**
+
+{% for l in offre.livrables %}
+- {{ l }}
+{% endfor %}
+
+{% if offre.rythme %}**Rythme d'intervention :** {{ offre.rythme }}.{% endif +%}
+
+## 4. Calendrier
+
+{% if offre.mensuelle %}
+La mission débuterait le **{{ mission.date_debut | date_fr }}**, pour une durée de **{{ mission.duree }} mois**, soit jusqu'au {{ mission.date_fin | date_fr }}. Elle comprend une période d'engagement de {{ conditions.engagement_mois }} mois.
+{% else %}
+La mission débuterait le **{{ mission.date_debut | date_fr }}**, avec une remise des livrables prévue sous **{{ mission.duree }} semaine{{ 's' if mission.duree > 1 }}**, soit au plus tard le {{ mission.date_fin | date_fr }}, sous réserve de la transmission des documents nécessaires.
+{% endif %}
+
+## 5. Investissement
+
+{% if offre.mensuelle %}
+| | Par mois | Sur {{ montants.nb_periodes }} mois |
+|---|---|---|
+| Honoraires HT | {{ montants.ht | xpf }} | {{ montants.total_ht | xpf }} |
+| TGC ({{ montants.taux_tgc | pct }}) | {{ montants.tgc | xpf }} | {{ montants.total_tgc | xpf }} |
+| **Total TTC** | **{{ montants.ttc | xpf }}** | **{{ montants.total_ttc | xpf }}** |
+{% else %}
+| | Montant |
+|---|---|
+| Honoraires HT (forfait) | {{ montants.ht | xpf }} |
+| TGC ({{ montants.taux_tgc | pct }}) | {{ montants.tgc | xpf }} |
+| **Total TTC** | **{{ montants.ttc | xpf }}** |
+{% endif %}
+
+{{ conditions.facturation_mensuelle if offre.mensuelle else conditions.facturation_forfait }} Paiement à {{ conditions.delai_paiement_jours }} jours à compter de la date de facture.
+
+## 6. Prochaines étapes
+
+- Validation de la présente proposition
+- Signature de la lettre de mission
+- Réunion de lancement et collecte des documents
+
+Cette proposition est valable {{ conditions.validite_proposition_jours }} jours à compter de sa date d'émission.
+
+**{{ cabinet.nom_commercial }}** — {{ cabinet.signataire | ac }}, {{ cabinet.qualite_signataire | ac }}
+
+{{ cabinet.email | ac }} · {{ cabinet.telephone | ac }}

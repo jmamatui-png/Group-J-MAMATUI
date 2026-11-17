@@ -1,0 +1,68 @@
+# Catalogue des offres MGE Conseil. Prix en F CFP (XPF), hors taxes.
+# type : "mensuel" (prix par mois, durée en mois) ou "forfait" (prix global, durée en semaines).
+# Pour un forfait à fourchette, indiquer prix_ht_min et prix_ht_max au lieu de prix_ht.
+
+diagnostic-flash-360:
+  nom: Diagnostic flash 360
+  type: forfait
+  prix_ht: 150000
+  description: Un état des lieux complet et rapide de la santé financière de l'entreprise.
+  livrables:
+    - Analyse de la rentabilité, de la trésorerie et du besoin en fonds de roulement
+    - Lecture de la structure financière et de l'endettement
+    - Revue de l'organisation administrative et financière
+    - Rapport de synthèse et plan d'action priorisé, présenté au dirigeant
+
+daf-essentiel:
+  nom: DAF Essentiel
+  type: mensuel
+  prix_ht: 150000
+  jours_min: 2
+  jours_max: 2
+  description: Les fondamentaux du pilotage financier, pour garder le cap au quotidien.
+  livrables:
+    - Tableau de bord mensuel des indicateurs clés
+    - Suivi de la trésorerie
+    - Coordination avec l'expert-comptable
+    - Point mensuel avec le dirigeant
+
+daf-pilotage:
+  nom: DAF Pilotage
+  type: mensuel
+  prix_ht: 250000
+  jours_min: 4
+  jours_max: 4
+  description: Un pilotage complet - budget, prévisions et reporting - pour décider en confiance.
+  livrables:
+    - Tableau de bord mensuel des indicateurs clés
+    - Construction et suivi du budget annuel
+    - Prévisionnel de trésorerie glissant
+    - Reporting de gestion et analyse des écarts
+    - Mise en place ou amélioration des procédures financières
+    - Coordination avec l'expert-comptable
+
+daf-croissance:
+  nom: DAF Croissance
+  type: mensuel
+  prix_ht: 400000
+  jours_min: 6
+  jours_max: 8
+  description: Un partenaire financier impliqué pour accompagner les projets de développement.
+  livrables:
+    - Ensemble des livrables de l'offre DAF Pilotage
+    - Business plan et modélisation financière
+    - Préparation et suivi des relations bancaires
+    - Accompagnement des projets d'investissement et de structuration
+    - Participation aux réunions stratégiques
+
+dossier-de-financement:
+  nom: Dossier de financement
+  type: forfait
+  prix_ht_min: 250000
+  prix_ht_max: 500000
+  description: Un dossier solide et argumenté pour présenter le projet aux financeurs.
+  livrables:
+    - Analyse du besoin et du plan de financement
+    - Comptes prévisionnels et plan de trésorerie
+    - Rédaction du dossier de présentation
+    - Préparation des rendez-vous avec les partenaires financiers
