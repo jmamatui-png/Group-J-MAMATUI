@@ -1,0 +1,109 @@
+# Lettre de mission
+
+**{{ offre.nom }}** — Référence : **{{ numero }}**
+
+## Entre les soussignés
+
+**{{ cabinet.denomination_sociale | ac }}** ({{ cabinet.nom_commercial }}), {{ cabinet.forme_juridique | ac }} au capital de {{ cabinet.capital_social | ac }}, RIDET {{ cabinet.ridet | ac }}, dont le siège est situé {{ cabinet.adresse | ac }}, {{ cabinet.code_postal | ac }} {{ cabinet.ville }}, représentée par {{ cabinet.signataire | ac }}, {{ cabinet.qualite_signataire | ac }}, ci-après « **le Cabinet** »,
+
+et
+
+**{{ client.raison_sociale }}**, RIDET {{ client.ridet }}, dont le siège est situé {{ client.adresse | ac }}, représentée par {{ client.dirigeant }}, {{ client.qualite_dirigeant | ac }}, ci-après « **le Client** ».
+
+## Article 1 — Objet et périmètre de la mission
+
+Le Client confie au Cabinet une mission de **conseil et de pilotage financier** dans le cadre de l'offre **{{ offre.nom }}** : {{ offre.description | initiale_min }}
+
+**Exclusions.** La mission ne comprend **ni la tenue de la comptabilité, ni l'établissement des comptes annuels**, ni aucune mission réservée aux experts-comptables, commissaires aux comptes, avocats ou établissements de crédit. Le Client conserve à cet effet son propre expert-comptable, avec lequel le Cabinet se coordonne. Le Cabinet n'accorde aucun financement et ne garantit pas l'obtention d'un financement, dont la décision appartient exclusivement aux organismes sollicités.
+
+Les décisions de gestion restent de la seule responsabilité du Client.
+
+## Article 2 — Livrables
+
+{% for l in offre.livrables %}
+- {{ l }}
+{% endfor %}
+
+{% if offre.rythme %}Volume d'intervention prévu : {{ offre.rythme }}.{% endif +%}
+
+## Article 3 — Calendrier
+
+{% if offre.mensuelle %}
+La mission prend effet le **{{ mission.date_debut | date_fr }}** pour une durée de **{{ mission.duree }} mois**, soit jusqu'au {{ mission.date_fin | date_fr }}.
+{% else %}
+La mission prend effet le **{{ mission.date_debut | date_fr }}**. Les livrables seront remis sous **{{ mission.duree }} semaine{{ 's' if mission.duree > 1 }}**, soit au plus tard le {{ mission.date_fin | date_fr }}, ce délai courant à compter de la réception de l'ensemble des documents demandés.
+{% endif %}
+
+## Article 4 — Honoraires
+
+{% if offre.mensuelle %}
+| | Par mois | Sur {{ montants.nb_periodes }} mois |
+|---|---|---|
+| Honoraires HT | {{ montants.ht | xpf }} | {{ montants.total_ht | xpf }} |
+| TGC ({{ montants.taux_tgc | pct }}) | {{ montants.tgc | xpf }} | {{ montants.total_tgc | xpf }} |
+| **Total TTC** | **{{ montants.ttc | xpf }}** | **{{ montants.total_ttc | xpf }}** |
+{% else %}
+| | Montant |
+|---|---|
+| Honoraires HT (forfait) | {{ montants.ht | xpf }} |
+| TGC ({{ montants.taux_tgc | pct }}) | {{ montants.tgc | xpf }} |
+| **Total TTC** | **{{ montants.ttc | xpf }}** |
+{% endif %}
+
+Les honoraires sont exprimés hors taxes ; la TGC est appliquée au taux en vigueur à la date de facturation, soit {{ montants.taux_tgc | pct }} à la date des présentes. Les frais de déplacement hors Grand Nouméa et les débours éventuels sont facturés en sus, après accord préalable du Client.
+
+## Article 5 — Facturation et paiement
+
+{{ conditions.facturation_mensuelle if offre.mensuelle else conditions.facturation_forfait }} Les factures sont **payables à {{ conditions.delai_paiement_jours }} jours** à compter de leur date d'émission, par virement bancaire.
+
+{% if conditions.penalites_retard %}En cas de retard de paiement : {{ conditions.penalites_retard }}{% else %}Pénalités de retard : {{ conditions.penalites_retard | ac }}{% endif +%}
+
+En cas de retard de paiement, le Cabinet peut suspendre ses travaux après une mise en demeure restée sans effet pendant huit jours.
+
+## Article 6 — Durée, engagement et résiliation
+
+{% if offre.mensuelle %}
+La mission est conclue pour une **période d'engagement ferme de {{ conditions.engagement_mois }} mois** à compter de sa prise d'effet. À l'issue de cette période, chaque partie peut y mettre fin à tout moment par lettre recommandée ou courriel avec accusé de réception, moyennant un **préavis de {{ conditions.preavis_mois }} mois**. À défaut de résiliation, la mission se poursuit jusqu'au terme prévu à l'article 3.
+
+En cas de manquement grave de l'une des parties, non réparé quinze jours après une mise en demeure, l'autre partie peut résilier la mission sans préavis.
+{% else %}
+La mission prend fin à la remise des livrables. En cas de résiliation anticipée à l'initiative du Client, les travaux réalisés restent dus au prorata de leur avancement.
+{% endif %}
+
+## Article 7 — Obligations du Client
+
+Le Client s'engage à :
+
+- transmettre au Cabinet, dans les délais convenus, des informations et documents **complets, sincères et à jour** ;
+- donner au Cabinet accès aux documents comptables, bancaires et de gestion nécessaires, ainsi qu'à son expert-comptable ;
+- désigner un interlocuteur disponible et habilité à prendre les décisions ;
+- informer sans délai le Cabinet de tout événement significatif affectant sa situation ;
+- régler les honoraires aux échéances convenues.
+
+Le Cabinet ne saurait être tenu responsable des conséquences d'informations incomplètes, inexactes ou tardives.
+
+## Article 8 — Confidentialité
+
+Chaque partie s'engage à garder strictement confidentielles les informations de toute nature communiquées par l'autre partie, et à ne les utiliser que pour l'exécution de la mission. Cette obligation s'applique pendant toute la durée de la mission et **{{ conditions.confidentialite_annees }} ans** après sa fin. Elle ne s'applique pas aux informations déjà publiques ou dont la communication est exigée par la loi ou une autorité.
+
+Le Cabinet ne mentionne le Client comme référence qu'avec son accord écrit préalable.
+
+## Article 9 — Responsabilité
+
+Le Cabinet est tenu à une **obligation de moyens**. Sa responsabilité, toutes causes confondues, est **limitée au montant des honoraires HT effectivement perçus au titre de la mission au cours des douze mois précédant le fait générateur**, sauf faute lourde ou dolosive. Le Cabinet ne peut être tenu responsable des décisions de gestion prises par le Client, ni des décisions des organismes financiers ou administratifs.
+
+## Article 10 — Droit applicable et litiges
+
+La présente lettre de mission est soumise au droit applicable en Nouvelle-Calédonie. Les parties recherchent une solution amiable avant toute action ; à défaut, les juridictions de Nouméa sont seules compétentes.
+
+[[saut-de-page]]
+
+## Signatures
+
+Fait à Nouméa, le {{ date_document | date_fr }}, en deux exemplaires originaux.
+
+| Pour le Cabinet | Pour le Client |
+|---|---|
+| {{ cabinet.signataire | ac }}, {{ cabinet.qualite_signataire | ac }} | {{ client.dirigeant }}, {{ client.qualite_dirigeant | ac }} |
+| Signature précédée de « Bon pour accord » | Signature précédée de « Bon pour accord » |
+| | |

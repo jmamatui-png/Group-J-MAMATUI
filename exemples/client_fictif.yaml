@@ -1,0 +1,16 @@
+# Fiche client FICTIVE, pour démonstration et tests.
+raison_sociale: Boulangerie du Lagon SARL
+ridet: "0000000.001"
+dirigeant: Marie Exemple
+qualite_dirigeant: Gérante
+adresse: 1 rue Fictive, 98800 Nouméa
+secteur: Boulangerie-pâtisserie, 3 points de vente
+chiffre_affaires: 180000000
+enjeux:
+  - Tensions de trésorerie récurrentes en fin de mois
+  - Absence de tableau de bord pour suivre la marge par point de vente
+  - Projet d'ouverture d'un quatrième point de vente
+offre: daf-pilotage
+prix_ht: 250000
+duree: 12
+date_debut: 2027-01-04

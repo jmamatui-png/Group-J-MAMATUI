@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+# Données réelles : ne jamais versionner
+data/
+sortie/
+clients/
