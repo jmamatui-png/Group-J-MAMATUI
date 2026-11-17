@@ -1,0 +1,52 @@
+# Configuration du tableau de bord. Données fictives tant que les vrais exports ne sont pas déposés.
+
+# Entités : le code sert de nom de dossier dans donnees/ et de valeur « entite » dans la saisie.
+# noms_tiers : noms sous lesquels l'entité apparaît comme CLIENT dans les factures des autres
+# (pour éliminer la facturation intragroupe en consolidation).
+entites:
+  terrawaves:
+    nom: Terrawaves Logistics
+    noms_tiers: ["Terrawaves", "Terrawaves Logistics"]
+  mge:
+    nom: MGE Conseil
+    noms_tiers: ["MGE", "MGE Conseil"]
+  holding:
+    nom: GROUP J MAMATUI
+    noms_tiers: ["GROUP J MAMATUI", "Holding J Mamatui"]
+
+# Solde de chaque compte bancaire AVANT la première écriture présente dans l'export Dolibarr
+# (= « solde initial » du compte dans Dolibarr). Clé : libellé ou référence du compte.
+soldes_initiaux:
+  terrawaves: {}
+  mge: {}
+  holding: {}
+
+seuil_part_premier_client: 0.75   # alerte Terrawaves
+jours_retard_creances: 30         # créances échues depuis plus de N jours
+jours_disponibles_mge: 10         # par mois, si non saisi
+taux_provision_fiscale: null      # ex. 0.25 pour 25 % — À PARAMÉTRER (voir README)
+
+# Correspondance des colonnes des exports Dolibarr : liste d'intitulés acceptés pour chaque champ
+# (comparaison sans majuscules ni accents). Ajouter ici l'intitulé exact si un import échoue.
+# Intitulés relevés sur Dolibarr 22 en français : exports « Factures clients et lignes de factures »,
+# « Factures clients et règlements » et « Écritures bancaires et relevés ».
+colonnes:
+  factures:
+    ref: ["Réf. facture", "Référence facture", "f.ref"]
+    tiers: ["Raison sociale", "Tiers", "Nom du tiers", "s.nom"]
+    date: ["Date facturation", "Date facture", "f.datef"]
+    echeance: ["Date échéance", "Date limite règlement", "f.date_lim_reglement"]
+    ht: ["Total HT", "Montant HT", "f.total_ht"]
+    ttc: ["Total TTC", "Montant TTC", "f.total_ttc"]
+    statut: ["Statut facture", "Statut", "État", "f.fk_statut"]
+    type: ["Type", "Type facture", "f.type"]
+  paiements:
+    ref_facture: ["Réf. facture", "Référence facture", "f.ref"]
+    date: ["Date paiement", "Date règlement", "p.datep"]
+    montant: ["Montant paiement affecté à la facture", "pf.amount", "Montant paiement", "p.amount"]
+  banque:
+    compte: ["Ref compte financier", "Libellé compte financier", "Compte", "ba.ref"]
+    date: ["Date opération", "Date valeur", "b.dateo"]
+    montant: ["Montant", "b.amount"]
+    debit: ["Débit", "-b.amount"]
+    credit: ["Crédit"]

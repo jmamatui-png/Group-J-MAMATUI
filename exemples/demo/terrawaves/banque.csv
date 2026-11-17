@@ -1,0 +1,268 @@
+Ref compte financier;Date opération;Libellé;Débit;Crédit
+CPT-PRINCIPAL;05/11/2025;Loyer dépôt;300000;
+CPT-PRINCIPAL;10/11/2025;Carburant;420000;
+CPT-PRINCIPAL;15/11/2025;CAFAT;780000;
+CPT-PRINCIPAL;20/11/2025;Sous-traitant transport;350000;
+CPT-PRINCIPAL;28/11/2025;Salaires;2400000;
+CPT-PRINCIPAL;05/12/2025;Loyer dépôt;300000;
+CPT-PRINCIPAL;10/12/2025;Carburant;420000;
+CPT-PRINCIPAL;15/12/2025;Règlement TW2511-0005 Particuliers divers;;114330
+CPT-PRINCIPAL;15/12/2025;CAFAT;780000;
+CPT-PRINCIPAL;18/12/2025;Règlement TW2511-0011 Particuliers divers;;502830
+CPT-PRINCIPAL;20/12/2025;Sous-traitant transport;350000;
+CPT-PRINCIPAL;23/12/2025;Règlement TW2511-0010 Client Beta (fictif);;134310
+CPT-PRINCIPAL;27/12/2025;Règlement TW2511-0003 Client Logistique Alpha (fictif);;139860
+CPT-PRINCIPAL;28/12/2025;Salaires;2400000;
+CPT-PRINCIPAL;31/12/2025;Règlement TW2511-0004 Client Logistique Alpha (fictif);;123210
+CPT-PRINCIPAL;31/12/2025;Règlement TW2511-0016 Client Beta (fictif);;456210
+CPT-PRINCIPAL;03/01/2026;Règlement TW2511-0006 Client Logistique Alpha (fictif);;406260
+CPT-PRINCIPAL;05/01/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;07/01/2026;Règlement TW2511-0007 Client Logistique Alpha (fictif);;451770
+CPT-PRINCIPAL;10/01/2026;Règlement TW2511-0008 Client Logistique Alpha (fictif);;370740
+CPT-PRINCIPAL;10/01/2026;Carburant;420000;
+CPT-PRINCIPAL;11/01/2026;Règlement TW2511-0001 Client Logistique Alpha (fictif);;458430
+CPT-PRINCIPAL;14/01/2026;Règlement TW2511-0009 Client Logistique Alpha (fictif);;420690
+CPT-PRINCIPAL;14/01/2026;Règlement TW2512-0026 Particuliers divers;;475080
+CPT-PRINCIPAL;15/01/2026;CAFAT;780000;
+CPT-PRINCIPAL;16/01/2026;Règlement TW2511-0012 Client Logistique Alpha (fictif);;283050
+CPT-PRINCIPAL;17/01/2026;Règlement TW2512-0023 Client Logistique Alpha (fictif);;95460
+CPT-PRINCIPAL;19/01/2026;Règlement TW2511-0014 Client Logistique Alpha (fictif);;287490
+CPT-PRINCIPAL;20/01/2026;Règlement TW2512-0022 Particuliers divers;;174270
+CPT-PRINCIPAL;20/01/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;22/01/2026;Règlement TW2511-0019 Client Logistique Alpha (fictif);;508380
+CPT-PRINCIPAL;23/01/2026;Règlement TW2511-0013 Client Logistique Alpha (fictif);;468420
+CPT-PRINCIPAL;24/01/2026;Règlement TW2512-0021 Client Logistique Alpha (fictif);;400710
+CPT-PRINCIPAL;25/01/2026;Règlement TW2512-0027 Client Logistique Alpha (fictif);;147630
+CPT-PRINCIPAL;26/01/2026;Règlement TW2511-0015 Client Logistique Alpha (fictif);;140970
+CPT-PRINCIPAL;28/01/2026;Règlement TW2511-0018 Client Logistique Alpha (fictif);;154290
+CPT-PRINCIPAL;28/01/2026;Salaires;2400000;
+CPT-PRINCIPAL;29/01/2026;Règlement TW2512-0040 Client Logistique Alpha (fictif);;431790
+CPT-PRINCIPAL;30/01/2026;Règlement TW2512-0024 Client Logistique Alpha (fictif);;298590
+CPT-PRINCIPAL;01/02/2026;Règlement TW2512-0020 Client Logistique Alpha (fictif);;400710
+CPT-PRINCIPAL;05/02/2026;Règlement TW2512-0028 Client Logistique Alpha (fictif);;429570
+CPT-PRINCIPAL;05/02/2026;Règlement TW2512-0030 Client Logistique Alpha (fictif);;448440
+CPT-PRINCIPAL;05/02/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;07/02/2026;Règlement TW2512-0036 Client Logistique Alpha (fictif);;527250
+CPT-PRINCIPAL;10/02/2026;Carburant;420000;
+CPT-PRINCIPAL;12/02/2026;Règlement TW2512-0025 Client Logistique Alpha (fictif);;380730
+CPT-PRINCIPAL;12/02/2026;Règlement TW2512-0033 Client Logistique Alpha (fictif);;481740
+CPT-PRINCIPAL;15/02/2026;CAFAT;780000;
+CPT-PRINCIPAL;16/02/2026;Règlement TW2512-0031 Client Logistique Alpha (fictif);;157620
+CPT-PRINCIPAL;16/02/2026;Règlement TW2512-0034 Client Logistique Alpha (fictif);;397380
+CPT-PRINCIPAL;16/02/2026;Règlement TW2512-0041 Particuliers divers;;286380
+CPT-PRINCIPAL;17/02/2026;Règlement TW2512-0032 Client Logistique Alpha (fictif);;169830
+CPT-PRINCIPAL;18/02/2026;Règlement TW2512-0029 Client Logistique Alpha (fictif);;145410
+CPT-PRINCIPAL;18/02/2026;Règlement TW2512-0038 Client Beta (fictif);;316350
+CPT-PRINCIPAL;19/02/2026;Règlement TW2512-0039 Client Logistique Alpha (fictif);;290820
+CPT-PRINCIPAL;20/02/2026;Règlement TW2512-0037 Client Logistique Alpha (fictif);;449550
+CPT-PRINCIPAL;20/02/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;21/02/2026;Règlement TW2601-0054 Client Beta (fictif);;372960
+CPT-PRINCIPAL;22/02/2026;Règlement TW2601-0042 Client Logistique Alpha (fictif);;204240
+CPT-PRINCIPAL;22/02/2026;Règlement TW2601-0043 Client Logistique Alpha (fictif);;459540
+CPT-PRINCIPAL;23/02/2026;Règlement TW2601-0045 Client Logistique Alpha (fictif);;449550
+CPT-PRINCIPAL;24/02/2026;Règlement TW2512-0035 Client Logistique Alpha (fictif);;453990
+CPT-PRINCIPAL;24/02/2026;Règlement TW2601-0050 Client Beta (fictif);;167610
+CPT-PRINCIPAL;25/02/2026;Règlement TW2601-0047 Client Logistique Alpha (fictif);;174270
+CPT-PRINCIPAL;28/02/2026;Salaires;2400000;
+CPT-PRINCIPAL;01/03/2026;Règlement TW2601-0051 Client Beta (fictif);;208680
+CPT-PRINCIPAL;02/03/2026;Règlement TW2601-0062 Particuliers divers;;235320
+CPT-PRINCIPAL;03/03/2026;Règlement TW2601-0048 Client Logistique Alpha (fictif);;357420
+CPT-PRINCIPAL;05/03/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;07/03/2026;Règlement TW2601-0056 Client Logistique Alpha (fictif);;439560
+CPT-PRINCIPAL;09/03/2026;Règlement TW2601-0053 Particuliers divers;;289710
+CPT-PRINCIPAL;09/03/2026;Règlement TW2601-0057 Client Logistique Alpha (fictif);;382950
+CPT-PRINCIPAL;10/03/2026;Carburant;420000;
+CPT-PRINCIPAL;11/03/2026;Règlement TW2601-0044 Client Logistique Alpha (fictif);;492840
+CPT-PRINCIPAL;11/03/2026;Règlement TW2601-0060 Particuliers divers;;432900
+CPT-PRINCIPAL;12/03/2026;Règlement TW2601-0052 Client Logistique Alpha (fictif);;397380
+CPT-PRINCIPAL;15/03/2026;CAFAT;780000;
+CPT-PRINCIPAL;16/03/2026;Règlement TW2601-0046 Client Logistique Alpha (fictif);;136530
+CPT-PRINCIPAL;18/03/2026;Règlement TW2601-0055 Client Logistique Alpha (fictif);;338550
+CPT-PRINCIPAL;20/03/2026;Règlement TW2601-0058 Client Logistique Alpha (fictif);;196470
+CPT-PRINCIPAL;20/03/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;23/03/2026;Règlement TW2601-0049 Client Logistique Alpha (fictif);;163170
+CPT-PRINCIPAL;25/03/2026;Règlement TW2602-0074 Client Beta (fictif);;138750
+CPT-PRINCIPAL;27/03/2026;Règlement TW2602-0066 Particuliers divers;;354090
+CPT-PRINCIPAL;27/03/2026;Règlement TW2602-0072 Client Beta (fictif);;241980
+CPT-PRINCIPAL;28/03/2026;Règlement TW2601-0061 Client Logistique Alpha (fictif);;391830
+CPT-PRINCIPAL;28/03/2026;Règlement TW2602-0071 Particuliers divers;;218670
+CPT-PRINCIPAL;28/03/2026;Salaires;2400000;
+CPT-PRINCIPAL;31/03/2026;Règlement TW2602-0063 Client Logistique Alpha (fictif);;342990
+CPT-PRINCIPAL;31/03/2026;Règlement TW2602-0073 Client Beta (fictif);;472860
+CPT-PRINCIPAL;01/04/2026;Règlement TW2602-0068 Client Logistique Alpha (fictif);;199800
+CPT-PRINCIPAL;02/04/2026;Règlement TW2602-0064 Client Logistique Alpha (fictif);;129870
+CPT-PRINCIPAL;05/04/2026;Règlement TW2602-0070 Client Logistique Alpha (fictif);;379620
+CPT-PRINCIPAL;05/04/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;07/04/2026;Règlement TW2602-0065 Client Logistique Alpha (fictif);;529470
+CPT-PRINCIPAL;07/04/2026;Règlement TW2602-0067 Client Logistique Alpha (fictif);;467310
+CPT-PRINCIPAL;08/04/2026;Règlement TW2601-0059 Client Logistique Alpha (fictif);;407370
+CPT-PRINCIPAL;08/04/2026;Règlement TW2603-0083 Client Beta (fictif);;334110
+CPT-PRINCIPAL;10/04/2026;Carburant;420000;
+CPT-PRINCIPAL;11/04/2026;Règlement TW2603-0082 Particuliers divers;;380730
+CPT-PRINCIPAL;15/04/2026;Règlement TW2602-0075 Client Logistique Alpha (fictif);;129870
+CPT-PRINCIPAL;15/04/2026;CAFAT;780000;
+CPT-PRINCIPAL;20/04/2026;Règlement TW2602-0076 Client Logistique Alpha (fictif);;214230
+CPT-PRINCIPAL;20/04/2026;Règlement TW2602-0078 Client Logistique Alpha (fictif);;491730
+CPT-PRINCIPAL;20/04/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;24/04/2026;Règlement TW2603-0084 Client Logistique Alpha (fictif);;218670
+CPT-PRINCIPAL;26/04/2026;Règlement TW2603-0097 Client Beta (fictif);;379620
+CPT-PRINCIPAL;28/04/2026;Règlement TW2602-0077 Client Logistique Alpha (fictif);;280830
+CPT-PRINCIPAL;28/04/2026;Règlement TW2603-0095 Client Beta (fictif);;427350
+CPT-PRINCIPAL;28/04/2026;Salaires;2400000;
+CPT-PRINCIPAL;29/04/2026;Règlement TW2602-0079 Client Logistique Alpha (fictif);;116550
+CPT-PRINCIPAL;02/05/2026;Règlement TW2603-0087 Client Logistique Alpha (fictif);;136530
+CPT-PRINCIPAL;03/05/2026;Règlement TW2603-0088 Client Logistique Alpha (fictif);;114330
+CPT-PRINCIPAL;03/05/2026;Règlement TW2603-0091 Client Logistique Alpha (fictif);;135420
+CPT-PRINCIPAL;04/05/2026;Règlement TW2603-0085 Client Beta (fictif);;449550
+CPT-PRINCIPAL;05/05/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;06/05/2026;Règlement TW2603-0089 Client Logistique Alpha (fictif);;237540
+CPT-PRINCIPAL;09/05/2026;Règlement TW2602-0080 Client Logistique Alpha (fictif);;341880
+CPT-PRINCIPAL;09/05/2026;Règlement TW2603-0096 Client Beta (fictif);;453990
+CPT-PRINCIPAL;10/05/2026;Règlement TW2603-0099 Client Logistique Alpha (fictif);;478410
+CPT-PRINCIPAL;10/05/2026;Carburant;420000;
+CPT-PRINCIPAL;12/05/2026;Règlement TW2604-0106 Client Logistique Alpha (fictif);;477300
+CPT-PRINCIPAL;14/05/2026;Règlement TW2603-0098 Client Logistique Alpha (fictif);;375180
+CPT-PRINCIPAL;15/05/2026;Règlement TW2603-0092 Client Logistique Alpha (fictif);;238650
+CPT-PRINCIPAL;15/05/2026;CAFAT;780000;
+CPT-PRINCIPAL;16/05/2026;Règlement TW2604-0105 Client Beta (fictif);;219780
+CPT-PRINCIPAL;17/05/2026;Règlement TW2603-0090 Client Logistique Alpha (fictif);;264180
+CPT-PRINCIPAL;17/05/2026;Règlement TW2604-0100 Client Logistique Alpha (fictif);;105450
+CPT-PRINCIPAL;17/05/2026;Règlement TW2604-0101 Particuliers divers;;301920
+CPT-PRINCIPAL;18/05/2026;Règlement TW2603-0094 Client Logistique Alpha (fictif);;515040
+CPT-PRINCIPAL;19/05/2026;Règlement TW2604-0102 Client Logistique Alpha (fictif);;366300
+CPT-PRINCIPAL;20/05/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;21/05/2026;Règlement TW2604-0114 Client Beta (fictif);;237540
+CPT-PRINCIPAL;23/05/2026;Règlement TW2603-0086 Client Logistique Alpha (fictif);;444000
+CPT-PRINCIPAL;23/05/2026;Règlement TW2603-0093 Client Logistique Alpha (fictif);;311910
+CPT-PRINCIPAL;24/05/2026;Règlement TW2604-0111 Particuliers divers;;202020
+CPT-PRINCIPAL;28/05/2026;Salaires;2400000;
+CPT-PRINCIPAL;29/05/2026;Règlement TW2604-0104 Client Logistique Alpha (fictif);;130980
+CPT-PRINCIPAL;31/05/2026;Règlement TW2604-0115 Client Beta (fictif);;377400
+CPT-PRINCIPAL;02/06/2026;Règlement TW2604-0103 Client Logistique Alpha (fictif);;374070
+CPT-PRINCIPAL;05/06/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;07/06/2026;Règlement TW2604-0107 Client Logistique Alpha (fictif);;200910
+CPT-PRINCIPAL;07/06/2026;Règlement TW2604-0117 Client Logistique Alpha (fictif);;344100
+CPT-PRINCIPAL;09/06/2026;Règlement TW2604-0108 Client Logistique Alpha (fictif);;410700
+CPT-PRINCIPAL;10/06/2026;Carburant;420000;
+CPT-PRINCIPAL;12/06/2026;Règlement TW2604-0109 Client Logistique Alpha (fictif);;470640
+CPT-PRINCIPAL;12/06/2026;Règlement TW2604-0110 Client Logistique Alpha (fictif);;352980
+CPT-PRINCIPAL;12/06/2026;Règlement TW2605-0122 Client Logistique Alpha (fictif);;449550
+CPT-PRINCIPAL;14/06/2026;Règlement TW2604-0112 Client Logistique Alpha (fictif);;376290
+CPT-PRINCIPAL;15/06/2026;CAFAT;780000;
+CPT-PRINCIPAL;17/06/2026;Règlement TW2605-0126 Particuliers divers;;364080
+CPT-PRINCIPAL;20/06/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;21/06/2026;Règlement TW2604-0120 Client Logistique Alpha (fictif);;125430
+CPT-PRINCIPAL;23/06/2026;Règlement TW2605-0123 Client Logistique Alpha (fictif);;378510
+CPT-PRINCIPAL;25/06/2026;Règlement TW2605-0121 Client Logistique Alpha (fictif);;331890
+CPT-PRINCIPAL;25/06/2026;Règlement TW2605-0133 Particuliers divers;;306360
+CPT-PRINCIPAL;27/06/2026;Règlement TW2605-0125 Client Beta (fictif);;116550
+CPT-PRINCIPAL;28/06/2026;Salaires;2400000;
+CPT-PRINCIPAL;29/06/2026;Règlement TW2604-0113 Client Logistique Alpha (fictif);;207570
+CPT-PRINCIPAL;05/07/2026;Règlement TW2606-0141 Client Beta (fictif);;486180
+CPT-PRINCIPAL;05/07/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;06/07/2026;Règlement TW2605-0127 Client Logistique Alpha (fictif);;283050
+CPT-PRINCIPAL;10/07/2026;Règlement TW2605-0129 Client Logistique Alpha (fictif);;183150
+CPT-PRINCIPAL;10/07/2026;Règlement TW2605-0130 Client Logistique Alpha (fictif);;345210
+CPT-PRINCIPAL;10/07/2026;Règlement TW2605-0135 Client Logistique Alpha (fictif);;388500
+CPT-PRINCIPAL;10/07/2026;Règlement TW2605-0136 Client Logistique Alpha (fictif);;315240
+CPT-PRINCIPAL;10/07/2026;Carburant;420000;
+CPT-PRINCIPAL;11/07/2026;Règlement TW2606-0140 Client Logistique Alpha (fictif);;385170
+CPT-PRINCIPAL;12/07/2026;Règlement TW2605-0124 Client Logistique Alpha (fictif);;520590
+CPT-PRINCIPAL;15/07/2026;Règlement TW2605-0128 Client Logistique Alpha (fictif);;224220
+CPT-PRINCIPAL;15/07/2026;Règlement TW2605-0131 Client Logistique Alpha (fictif);;197580
+CPT-PRINCIPAL;15/07/2026;CAFAT;780000;
+CPT-PRINCIPAL;19/07/2026;Règlement TW2606-0142 Client Logistique Alpha (fictif);;159840
+CPT-PRINCIPAL;20/07/2026;Règlement TW2605-0132 Client Logistique Alpha (fictif);;411810
+CPT-PRINCIPAL;20/07/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;25/07/2026;Règlement TW2605-0134 Client Logistique Alpha (fictif);;246420
+CPT-PRINCIPAL;25/07/2026;Règlement TW2606-0139 Particuliers divers;;388500
+CPT-PRINCIPAL;27/07/2026;Règlement TW2606-0143 Client Logistique Alpha (fictif);;160950
+CPT-PRINCIPAL;28/07/2026;Règlement TW2605-0137 Client Logistique Alpha (fictif);;101010
+CPT-PRINCIPAL;28/07/2026;Règlement TW2606-0144 Client Logistique Alpha (fictif);;258630
+CPT-PRINCIPAL;28/07/2026;Salaires;2400000;
+CPT-PRINCIPAL;04/08/2026;Règlement TW2606-0148 Client Logistique Alpha (fictif);;327450
+CPT-PRINCIPAL;05/08/2026;Règlement TW2606-0145 Client Logistique Alpha (fictif);;215340
+CPT-PRINCIPAL;05/08/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;06/08/2026;Règlement TW2606-0151 Client Beta (fictif);;126540
+CPT-PRINCIPAL;08/08/2026;Règlement TW2606-0146 Client Logistique Alpha (fictif);;226440
+CPT-PRINCIPAL;10/08/2026;Règlement TW2606-0156 Particuliers divers;;266400
+CPT-PRINCIPAL;10/08/2026;Carburant;420000;
+CPT-PRINCIPAL;12/08/2026;Règlement TW2606-0149 Client Logistique Alpha (fictif);;298590
+CPT-PRINCIPAL;12/08/2026;Règlement TW2606-0153 Client Logistique Alpha (fictif);;442890
+CPT-PRINCIPAL;15/08/2026;Règlement TW2607-0163 Client Beta (fictif);;523920
+CPT-PRINCIPAL;15/08/2026;CAFAT;780000;
+CPT-PRINCIPAL;18/08/2026;Règlement TW2607-0159 Client Logistique Alpha (fictif);;134310
+CPT-PRINCIPAL;19/08/2026;Règlement TW2606-0154 Client Logistique Alpha (fictif);;426240
+CPT-PRINCIPAL;20/08/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;21/08/2026;Règlement TW2606-0155 Client Logistique Alpha (fictif);;427350
+CPT-PRINCIPAL;24/08/2026;Règlement TW2607-0158 Client Logistique Alpha (fictif);;276390
+CPT-PRINCIPAL;25/08/2026;Règlement TW2607-0157 Client Logistique Alpha (fictif);;386280
+CPT-PRINCIPAL;27/08/2026;Règlement TW2607-0170 Particuliers divers;;260850
+CPT-PRINCIPAL;28/08/2026;Règlement TW2607-0165 Client Logistique Alpha (fictif);;243090
+CPT-PRINCIPAL;28/08/2026;Règlement TW2607-0168 Client Beta (fictif);;352980
+CPT-PRINCIPAL;28/08/2026;Salaires;2400000;
+CPT-PRINCIPAL;05/09/2026;Règlement TW2607-0161 Client Logistique Alpha (fictif);;357420
+CPT-PRINCIPAL;05/09/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;06/09/2026;Règlement TW2606-0152 Client Logistique Alpha (fictif);;214230
+CPT-PRINCIPAL;10/09/2026;Règlement TW2607-0172 Client Logistique Alpha (fictif);;310800
+CPT-PRINCIPAL;10/09/2026;Règlement TW2607-0173 Client Logistique Alpha (fictif);;107670
+CPT-PRINCIPAL;10/09/2026;Carburant;420000;
+CPT-PRINCIPAL;11/09/2026;Règlement TW2607-0164 Client Logistique Alpha (fictif);;198690
+CPT-PRINCIPAL;12/09/2026;Règlement TW2607-0167 Client Logistique Alpha (fictif);;448440
+CPT-PRINCIPAL;15/09/2026;Règlement TW2607-0169 Client Logistique Alpha (fictif);;333000
+CPT-PRINCIPAL;15/09/2026;CAFAT;780000;
+CPT-PRINCIPAL;17/09/2026;Règlement TW2607-0160 Client Logistique Alpha (fictif);;264180
+CPT-PRINCIPAL;20/09/2026;Règlement TW2607-0177 Client Beta (fictif);;519480
+CPT-PRINCIPAL;20/09/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;21/09/2026;Règlement TW2607-0171 Client Logistique Alpha (fictif);;274170
+CPT-PRINCIPAL;21/09/2026;Règlement TW2607-0176 Client Logistique Alpha (fictif);;471750
+CPT-PRINCIPAL;22/09/2026;Règlement TW2607-0174 Client Logistique Alpha (fictif);;128760
+CPT-PRINCIPAL;26/09/2026;Règlement TW2607-0166 Client Logistique Alpha (fictif);;245310
+CPT-PRINCIPAL;28/09/2026;Salaires;2400000;
+CPT-PRINCIPAL;29/09/2026;Règlement TW2608-0188 Client Beta (fictif);;320790
+CPT-PRINCIPAL;29/09/2026;Règlement TW2608-0190 Client Beta (fictif);;465090
+CPT-PRINCIPAL;01/10/2026;Règlement TW2608-0182 Client Logistique Alpha (fictif);;342990
+CPT-PRINCIPAL;05/10/2026;Règlement TW2608-0185 Client Logistique Alpha (fictif);;530580
+CPT-PRINCIPAL;05/10/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;06/10/2026;Règlement TW2608-0186 Client Logistique Alpha (fictif);;109890
+CPT-PRINCIPAL;07/10/2026;Règlement TW2608-0178 Client Logistique Alpha (fictif);;507270
+CPT-PRINCIPAL;07/10/2026;Règlement TW2608-0179 Client Logistique Alpha (fictif);;222000
+CPT-PRINCIPAL;07/10/2026;Règlement TW2608-0195 Particuliers divers;;328560
+CPT-PRINCIPAL;08/10/2026;Règlement TW2608-0184 Client Logistique Alpha (fictif);;379620
+CPT-PRINCIPAL;08/10/2026;Règlement TW2608-0191 Client Logistique Alpha (fictif);;180930
+CPT-PRINCIPAL;10/10/2026;Carburant;420000;
+CPT-PRINCIPAL;11/10/2026;Règlement TW2609-0199 Client Logistique Alpha (fictif);;306360
+CPT-PRINCIPAL;12/10/2026;Règlement TW2608-0180 Client Logistique Alpha (fictif);;227550
+CPT-PRINCIPAL;13/10/2026;Règlement TW2607-0175 Client Logistique Alpha (fictif);;371850
+CPT-PRINCIPAL;14/10/2026;Règlement TW2608-0183 Client Logistique Alpha (fictif);;156510
+CPT-PRINCIPAL;14/10/2026;Règlement TW2609-0201 Client Logistique Alpha (fictif);;449550
+CPT-PRINCIPAL;15/10/2026;CAFAT;780000;
+CPT-PRINCIPAL;18/10/2026;Règlement TW2608-0192 Client Logistique Alpha (fictif);;117660
+CPT-PRINCIPAL;20/10/2026;Règlement TW2608-0187 Client Logistique Alpha (fictif);;233100
+CPT-PRINCIPAL;20/10/2026;Règlement TW2608-0194 Client Logistique Alpha (fictif);;318570
+CPT-PRINCIPAL;20/10/2026;Sous-traitant transport;350000;
+CPT-PRINCIPAL;21/10/2026;Règlement TW2608-0189 Client Logistique Alpha (fictif);;204240
+CPT-PRINCIPAL;26/10/2026;Règlement TW2609-0206 Client Logistique Alpha (fictif);;347430
+CPT-PRINCIPAL;27/10/2026;Règlement TW2609-0200 Client Logistique Alpha (fictif);;113220
+CPT-PRINCIPAL;28/10/2026;Salaires;2400000;
+CPT-PRINCIPAL;30/10/2026;Règlement TW2608-0198 Client Logistique Alpha (fictif);;249750
+CPT-PRINCIPAL;30/10/2026;Règlement TW2609-0209 Client Logistique Alpha (fictif);;222000
+CPT-PRINCIPAL;30/10/2026;Règlement TW2609-0210 Client Beta (fictif);;315240
+CPT-PRINCIPAL;30/10/2026;Règlement TW2609-0219 Particuliers divers;;206460
+CPT-PRINCIPAL;31/10/2026;Règlement TW2608-0193 Client Logistique Alpha (fictif);;325230
+CPT-PRINCIPAL;31/10/2026;Règlement TW2608-0197 Client Logistique Alpha (fictif);;314130
+CPT-PRINCIPAL;01/11/2026;Règlement TW2609-0214 Particuliers divers;;437340
+CPT-PRINCIPAL;03/11/2026;Règlement TW2609-0203 Client Logistique Alpha (fictif);;357420
+CPT-PRINCIPAL;05/11/2026;Règlement TW2609-0207 Client Logistique Alpha (fictif);;327450
+CPT-PRINCIPAL;05/11/2026;Loyer dépôt;300000;
+CPT-PRINCIPAL;06/11/2026;Règlement TW2609-0212 Client Logistique Alpha (fictif);;505050
+CPT-PRINCIPAL;07/11/2026;Règlement TW2609-0204 Client Logistique Alpha (fictif);;158730
+CPT-PRINCIPAL;07/11/2026;Règlement TW2610-0221 Particuliers divers;;473970
+CPT-PRINCIPAL;08/11/2026;Règlement TW2609-0213 Client Logistique Alpha (fictif);;516150
+CPT-PRINCIPAL;09/11/2026;Règlement TW2609-0202 Client Logistique Alpha (fictif);;214230
+CPT-PRINCIPAL;10/11/2026;Règlement TW2609-0205 Client Logistique Alpha (fictif);;407370
+CPT-PRINCIPAL;10/11/2026;Carburant;420000;
+CPT-PRINCIPAL;14/11/2026;Règlement TW2609-0215 Client Logistique Alpha (fictif);;367410
+CPT-PRINCIPAL;15/11/2026;Règlement TW2609-0211 Client Logistique Alpha (fictif);;139860
+CPT-PRINCIPAL;15/11/2026;Règlement TW2609-0218 Particuliers divers;;347430
+CPT-PRINCIPAL;15/11/2026;CAFAT;780000;

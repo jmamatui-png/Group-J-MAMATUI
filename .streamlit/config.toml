@@ -1,0 +1,13 @@
+# Tableau de bord local : accessible depuis ce poste uniquement, sans télémétrie.
+[server]
+address = "localhost"
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+primaryColor = "#0b1f3a"
