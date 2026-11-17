@@ -17,8 +17,8 @@ cabinet:
   qualite_signataire: ""
 
 conditions:
-  # Taux de TGC appliqué aux honoraires, en %. À vérifier avec votre expert-comptable.
-  taux_tgc: "11"
+  # Taux de TGC appliqué aux honoraires, en % : 6 % (prestations de service), validé le 17/11/2026.
+  taux_tgc: "6"
   delai_paiement_jours: 15
   engagement_mois: 6          # offres mensuelles uniquement
   preavis_mois: 1             # offres mensuelles, après la période d'engagement

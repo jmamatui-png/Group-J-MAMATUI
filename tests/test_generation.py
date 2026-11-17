@@ -13,7 +13,7 @@ CLAUSES_LM = [
     "Livrables",
     "Calendrier",
     "Honoraires HT",
-    "TGC (11 %)",
+    "TGC (6 %)",
     "payables à 15 jours",
     "période d'engagement ferme de 6 mois",
     "préavis de 1 mois",
@@ -63,18 +63,18 @@ def test_montants_dans_les_documents(generer):
     r = generer(duree=12)
     for p in (x for x in r["fichiers"] if x.suffix == ".docx"):
         t = texte_docx(p)
-        for montant in ("250 000 F CFP", "27 500 F CFP", "277 500 F CFP",
-                        "3 000 000 F CFP", "330 000 F CFP", "3 330 000 F CFP"):
+        for montant in ("250 000 F CFP", "15 000 F CFP", "265 000 F CFP",
+                        "3 000 000 F CFP", "180 000 F CFP", "3 180 000 F CFP"):
             assert montant in t, (p.name, montant)
         assert "TVA" not in t
 
 
 def test_taux_tgc_parametrable(tmp_path, config, catalogue, fiche_ok):
     f = valider(fiche_ok, catalogue)
-    r = generation.generer(f, config, sortie=tmp_path, registre=tmp_path / "r.json", taux_tgc="6",
+    r = generation.generer(f, config, sortie=tmp_path, registre=tmp_path / "r.json", taux_tgc="11",
                            formats=["docx"], documents=("lettre-de-mission",))
     t = texte_docx(r["fichiers"][0])
-    assert "TGC (6 %)" in t and "15 000 F CFP" in t and "265 000 F CFP" in t
+    assert "TGC (11 %)" in t and "27 500 F CFP" in t and "277 500 F CFP" in t
 
 
 def test_forfait_sans_engagement_mensuel(generer):
@@ -82,7 +82,7 @@ def test_forfait_sans_engagement_mensuel(generer):
     lm = next(p for p in r["fichiers"] if "lettre" in p.name and p.suffix == ".docx")
     t = texte_docx(lm)
     assert "La mission prend fin à la remise des livrables" in t
-    assert "166 500 F CFP" in t
+    assert "159 000 F CFP" in t
     assert "ni la tenue de la comptabilité" in t
 
 

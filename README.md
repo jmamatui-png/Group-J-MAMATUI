@@ -80,7 +80,7 @@ Les 94 tests couvrent :
 
 ## Hypothèses retenues — à valider
 
-1. **TGC à 11 %** par défaut, en paramètre. Le taux applicable aux prestations de conseil est à confirmer avec votre expert-comptable.
+1. **TGC à 6 %** (prestations de service), validé le 17/11/2026. Taux modifiable dans `config/mge.yaml` ou avec `--taux-tgc`.
 2. **Durée** : en **mois** pour les offres mensuelles, en **semaines** (délai de remise) pour les forfaits.
 3. **Engagement de 6 mois et préavis d'1 mois** : appliqués aux **offres mensuelles uniquement**. Pour un forfait, la mission se termine à la remise des livrables.
 4. **Facturation** : mensuelle en début de mois pour les offres mensuelles ; **50 % à la signature et 50 % à la livraison** pour les forfaits (modifiable dans `config/mge.yaml`).
