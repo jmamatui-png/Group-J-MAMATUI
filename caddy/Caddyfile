@@ -1,0 +1,36 @@
+# Reverse proxy HTTPS. Caddy redirige automatiquement HTTP vers HTTPS.
+# CADDY_TLS = "internal"            -> certificat local (ordinateur, réseau interne)
+# CADDY_TLS = adresse e-mail         -> certificat Let's Encrypt (VPS avec nom de domaine)
+
+(securite) {
+	tls {$CADDY_TLS}
+	encode gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+	request_body {
+		max_size 25MB
+	}
+	# Le dossier d'installation ne doit jamais être accessible une fois Dolibarr installé.
+	@install path /install /install/*
+	respond @install "Accès interdit" 403
+}
+
+terrawaves.{$DOMAINE} {
+	import securite
+	reverse_proxy terrawaves:80
+}
+
+mge.{$DOMAINE} {
+	import securite
+	reverse_proxy mge:80
+}
+
+holding.{$DOMAINE} {
+	import securite
+	reverse_proxy holding:80
+}

@@ -1,0 +1,112 @@
+# Dolibarr pour le groupe : 3 sociétés (Terrawaves, MGE, holding) = 3 instances Dolibarr
+# séparées, une base MariaDB par société, un reverse proxy Caddy en HTTPS obligatoire.
+# Seul Caddy est exposé (ports 80 -> redirection HTTPS, et 443). La base n'est jamais exposée.
+# Ne pas modifier : les valeurs se règlent dans le fichier .env (créé par scripts/initialiser.sh).
+
+x-dolibarr: &dolibarr
+  image: dolibarr/dolibarr:22.0.5
+  restart: unless-stopped
+  depends_on:
+    mariadb:
+      condition: service_healthy
+  networks: [interne]
+  volumes:
+    - ./dolibarr/init:/var/www/scripts/docker-init.d:ro
+  environment: &dolibarr-env
+    DOLI_INSTALL_AUTO: "1"
+    DOLI_INIT_DEMO: "0"
+    DOLI_PROD: "1"
+    DOLI_DB_HOST: mariadb
+    DOLI_ADMIN_LOGIN: ${DOLI_ADMIN_LOGIN}
+    DOLI_ADMIN_PASSWORD: ${DOLI_ADMIN_PASSWORD}
+    DOLI_COMPANY_COUNTRYCODE: NC
+    DOLI_ENABLE_MODULES: Societe,Propale,Facture,Projet,Banque,Export,Import
+    DOLI_CRON: "0"
+    PHP_INI_DATE_TIMEZONE: Pacific/Noumea
+    PHP_INI_UPLOAD_MAX_FILESIZE: 20M
+    PHP_INI_POST_MAX_SIZE: 25M
+    WWW_USER_ID: "33"
+    WWW_GROUP_ID: "33"
+
+services:
+  mariadb:
+    image: mariadb:11.4
+    restart: unless-stopped
+    networks: [interne]
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      DB_PASSWORD_TERRAWAVES: ${DB_PASSWORD_TERRAWAVES}
+      DB_PASSWORD_MGE: ${DB_PASSWORD_MGE}
+      DB_PASSWORD_HOLDING: ${DB_PASSWORD_HOLDING}
+    volumes:
+      - ./donnees/mariadb:/var/lib/mysql
+      - ./mariadb/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  terrawaves:
+    <<: *dolibarr
+    volumes:
+      - ./dolibarr/init:/var/www/scripts/docker-init.d:ro
+      - ./donnees/documents/terrawaves:/var/www/documents
+      - ./donnees/custom/terrawaves:/var/www/html/custom
+    environment:
+      <<: *dolibarr-env
+      DOLI_DB_NAME: dolibarr_terrawaves
+      DOLI_DB_USER: terrawaves
+      DOLI_DB_PASSWORD: ${DB_PASSWORD_TERRAWAVES}
+      DOLI_URL_ROOT: https://terrawaves.${DOMAINE}
+      DOLI_COMPANY_NAME: Terrawaves Logistics
+      DOLI_INSTANCE_UNIQUE_ID: ${UNIQUE_ID_TERRAWAVES}
+
+  mge:
+    <<: *dolibarr
+    volumes:
+      - ./dolibarr/init:/var/www/scripts/docker-init.d:ro
+      - ./donnees/documents/mge:/var/www/documents
+      - ./donnees/custom/mge:/var/www/html/custom
+    environment:
+      <<: *dolibarr-env
+      DOLI_DB_NAME: dolibarr_mge
+      DOLI_DB_USER: mge
+      DOLI_DB_PASSWORD: ${DB_PASSWORD_MGE}
+      DOLI_URL_ROOT: https://mge.${DOMAINE}
+      DOLI_COMPANY_NAME: MGE Conseil
+      DOLI_INSTANCE_UNIQUE_ID: ${UNIQUE_ID_MGE}
+
+  holding:
+    <<: *dolibarr
+    volumes:
+      - ./dolibarr/init:/var/www/scripts/docker-init.d:ro
+      - ./donnees/documents/holding:/var/www/documents
+      - ./donnees/custom/holding:/var/www/html/custom
+    environment:
+      <<: *dolibarr-env
+      DOLI_DB_NAME: dolibarr_holding
+      DOLI_DB_USER: holding
+      DOLI_DB_PASSWORD: ${DB_PASSWORD_HOLDING}
+      DOLI_URL_ROOT: https://holding.${DOMAINE}
+      DOLI_COMPANY_NAME: GROUP J MAMATUI
+      DOLI_INSTANCE_UNIQUE_ID: ${UNIQUE_ID_HOLDING}
+
+  caddy:
+    image: caddy:2.10
+    restart: unless-stopped
+    networks: [interne]
+    depends_on: [terrawaves, mge, holding]
+    ports:
+      - "${ADRESSE_ECOUTE}:80:80"
+      - "${ADRESSE_ECOUTE}:443:443"
+    environment:
+      DOMAINE: ${DOMAINE}
+      CADDY_TLS: ${CADDY_TLS}
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./donnees/caddy/data:/data
+      - ./donnees/caddy/config:/config
+
+networks:
+  interne: {}

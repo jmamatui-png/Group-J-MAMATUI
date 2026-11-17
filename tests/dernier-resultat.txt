@@ -1,0 +1,40 @@
+1. Initialisation (.env, mode ordinateur local)
+  OK  .env en 600
+  OK  mot de passe admin de 24 caractères
+2. Démarrage
+  OK  terrawaves installé
+  OK  mge installé
+  OK  holding installé
+3. HTTPS et exposition
+  OK  terrawaves : page de connexion en HTTPS
+  OK  mge : page de connexion en HTTPS
+  OK  holding : page de connexion en HTTPS
+  OK  HTTP redirigé vers HTTPS (308 https://mge.localhost/)
+  OK  en-tête HSTS
+  OK  /install bloqué (403)
+  OK  MariaDB et Dolibarr ne publient aucun port (accès uniquement via le proxy HTTPS)
+  OK  seul le proxy publie 80 et 443
+  OK  mode local : proxy limité à 127.0.0.1
+4. Configuration Nouvelle-Calédonie
+  OK  XPF sans décimales, français, pays NC, TGC 0/3/6/11/22 %, modules actifs, mot de passe en bcrypt (3 sociétés)
+  OK  le mot de passe admin est bien reconnu
+5. Sauvegarde
+  OK  archive chiffrée créée : dolibarr_2026-11-17_1048.tar.gz.gpg
+  OK  archive chiffrée (AES, illisible sans la phrase)
+  OK  copie hors serveur présente
+6. Perte de données puis restauration locale
+  OK  tiers restauré
+  OK  document restauré
+  OK  propriétaire des documents conservé (www-data)
+  OK  les autres sociétés ne sont pas touchées
+  OK  Terrawaves de nouveau en ligne après restauration
+  OK  configuration conservée
+7. Restauration depuis la copie distante (serveur perdu)
+  OK  archive rapatriée
+  OK  Terrawaves restaurée depuis la copie distante
+8. Mauvaise phrase de chiffrement refusée
+  OK  refus avec une mauvaise phrase, aucune donnée touchée
+  OK  MGE intacte
+
+TOUS LES TESTS SONT PASSÉS
+code=0
