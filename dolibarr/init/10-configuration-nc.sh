@@ -22,6 +22,9 @@ CONST MAIN_SECURITY_ENABLECAPTCHA 1
 echo "[config-nc] Taux de TGC (Nouvelle-Calédonie, pays 165) — à faire vérifier"
 SQL "UPDATE llx_c_tva SET note = CONCAT('TGC ', taux, ' % (à vérifier)'), active = 1 WHERE fk_pays = 165;"
 SQL "UPDATE llx_c_tva SET note = 'TGC 0 % / exonéré (à vérifier)' WHERE fk_pays = 165 AND taux = 0;"
+# Taux validé par le dirigeant le 17/11/2026 : 6 % pour les prestations de service -> taux proposé par défaut.
+SQL "UPDATE llx_c_tva SET use_default = 0 WHERE fk_pays = 165;
+     UPDATE llx_c_tva SET use_default = 1, note = 'TGC 6 % - prestations de service (validé)' WHERE fk_pays = 165 AND taux = 6;"
 
 echo "[config-nc] Libellés : TVA -> TGC"
 for paire in "VAT|TGC" "VATs|TGC" "AmountVAT|Montant TGC" "TotalVAT|Total TGC" "VATRate|Taux TGC" \

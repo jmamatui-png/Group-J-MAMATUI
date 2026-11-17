@@ -135,7 +135,9 @@ Le pays (Nouvelle-Calédonie) et l'option « Assujetti à la TGC » sont déjà 
 
 *Accueil › Configuration › Dictionnaires › Taux de TVA* (le dictionnaire garde son nom d'origine) : les taux de Nouvelle-Calédonie sont actifs (0, 3, 6, 11 et 22 %), avec la mention « (à vérifier) ».
 
-> ⚠ **Faites confirmer ces taux et leur usage par votre expert-comptable** avant la première facture : quel taux pour quelle prestation (déménagement, transport, montage, conseil…). Désactivez les taux inutiles pour éviter les erreurs de saisie.
+Le taux de **6 %** est proposé par défaut : c'est celui des **prestations de service**, validé le 17/11/2026. Les autres taux restent disponibles pour les cas particuliers.
+
+> ⚠ Si une société vend aussi des **biens** (cartons, emballages, fournitures refacturées…), le taux n'est pas forcément 6 % : faites-le confirmer par votre expert-comptable et choisissez le taux ligne par ligne.
 
 Les écrans et les PDF affichent « TGC » au lieu de « TVA » pour les libellés principaux. Si un « TVA » subsiste quelque part, corrigez-le dans *Accueil › Configuration › Traduction*.
 

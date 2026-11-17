@@ -21,7 +21,7 @@ docker compose up -d
 | `docker-compose.yml` | MariaDB 11.4, 3 × Dolibarr 22.0.5, Caddy 2.10. Seul Caddy publie des ports (80 → redirection HTTPS, 443). |
 | `caddy/Caddyfile` | Un sous-domaine par société, en-têtes de sécurité (HSTS…), `/install` bloqué. Certificat Let's Encrypt (VPS) ou certificat local (ordinateur). |
 | `mariadb/init/01-bases.sh` | Une base et un utilisateur MariaDB par société. |
-| `dolibarr/init/10-configuration-nc.sh` | XPF sans décimales, français, pays NC, taux TGC 0/3/6/11/22 % (à vérifier), libellés TVA → TGC, captcha de connexion. |
+| `dolibarr/init/10-configuration-nc.sh` | XPF sans décimales, français, pays NC, taux TGC 0/3/6/11/22 % (6 % par défaut pour les prestations de service, validé ; autres taux à vérifier), libellés TVA → TGC, captcha de connexion. |
 | `dolibarr/init/20-securite.php` | Re-hachage du mot de passe admin en bcrypt (l'image le stocke en MD5). |
 | `scripts/initialiser.sh` | Crée `.env` avec des mots de passe aléatoires (24 à 40 caractères), en accès restreint (permissions 600). |
 | `scripts/sauvegarde.sh` | Dump des 3 bases + documents, chiffrement GPG AES-256, vérification, copie rclone hors serveur, rotation. |
@@ -50,7 +50,7 @@ Le test travaille sur une copie jetable du projet, sur la machine locale, puis s
 ## Hypothèses retenues — à valider
 
 - **3 instances au lieu du module Multicompany** : ce module est payant (DoliStore) et doit être maintenu à chaque mise à jour. La consolidation est faite par le tableau de bord du groupe.
-- **Taux de TGC** : ceux du dictionnaire Dolibarr pour la Nouvelle-Calédonie (0, 3, 6, 11, 22 %), marqués « à vérifier ». À confirmer avec l'expert-comptable, ainsi que le taux à appliquer à chaque prestation.
+- **Taux de TGC** : 6 % par défaut pour les prestations de service (validé le 17/11/2026). Les autres taux du dictionnaire Dolibarr (0, 3, 11, 22 %) restent actifs, marqués « à vérifier », pour les ventes de biens éventuelles.
 - **Export comptable** : export CSV des factures, règlements et écritures bancaires. L'export au format logiciel comptable (FEC) demande le module Comptabilité et un plan comptable calédonien, à paramétrer avec l'expert-comptable.
 - **Version** : Dolibarr 22.0.5. Les versions 23 et 24 existent ; la 22 a été retenue car c'est celle qui est testée ici. Une montée de version se fait d'une version majeure à la suivante, après sauvegarde (voir le guide, étape 10).
 

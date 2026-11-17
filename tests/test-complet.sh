@@ -58,12 +58,13 @@ for s in terrawaves mge holding; do
   q $s "SELECT value FROM llx_const WHERE name='MAIN_INFO_SOCIETE_COUNTRY'" | grep -q "NC" || ko "$s pays"
   [[ "$(q $s "SELECT GROUP_CONCAT(CAST(taux AS UNSIGNED) ORDER BY taux) FROM llx_c_tva WHERE fk_pays=165 AND active=1")" == "0,3,6,11,22" ]] || ko "$s taux TGC"
   [[ "$(q $s "SELECT transvalue FROM llx_overwrite_trans WHERE transkey='VAT' AND lang='fr_FR'")" == TGC ]] || ko "$s libellé TGC"
+  [[ "$(q $s "SELECT GROUP_CONCAT(CAST(taux AS UNSIGNED)) FROM llx_c_tva WHERE fk_pays=165 AND use_default=1")" == 6 ]] || ko "$s taux par défaut 6 %"
   for m in SOCIETE PROPALE FACTURE PROJET BANQUE EXPORT; do
     [[ "$(q $s "SELECT value FROM llx_const WHERE name='MAIN_MODULE_$m' AND entity=1")" == 1 ]] || ko "$s module $m"
   done
   [[ "$(q $s "SELECT LEFT(pass_crypted,4) FROM llx_user WHERE login='admin'")" == '$2y$' ]] || ko "$s hachage admin"
 done
-ok "XPF sans décimales, français, pays NC, TGC 0/3/6/11/22 %, modules actifs, mot de passe en bcrypt (3 sociétés)"
+ok "XPF sans décimales, français, pays NC, TGC 0/3/6/11/22 % (6 % par défaut), modules actifs, mot de passe en bcrypt (3 sociétés)"
 docker compose exec -T mge php -r 'chdir("/var/www/html"); require "/var/www/html/master.inc.php"; require_once DOL_DOCUMENT_ROOT."/core/lib/security.lib.php";
   $h=$db->getRow("SELECT pass_crypted FROM llx_user WHERE login=\"admin\"")->pass_crypted;
   exit(dol_verifyHash(getenv("DOLI_ADMIN_PASSWORD"), $h) ? 0 : 1);' && ok "le mot de passe admin est bien reconnu" || ko "mot de passe admin"

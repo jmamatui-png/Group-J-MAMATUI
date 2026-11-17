@@ -16,10 +16,10 @@
   OK  seul le proxy publie 80 et 443
   OK  mode local : proxy limité à 127.0.0.1
 4. Configuration Nouvelle-Calédonie
-  OK  XPF sans décimales, français, pays NC, TGC 0/3/6/11/22 %, modules actifs, mot de passe en bcrypt (3 sociétés)
+  OK  XPF sans décimales, français, pays NC, TGC 0/3/6/11/22 % (6 % par défaut), modules actifs, mot de passe en bcrypt (3 sociétés)
   OK  le mot de passe admin est bien reconnu
 5. Sauvegarde
-  OK  archive chiffrée créée : dolibarr_2026-11-17_1048.tar.gz.gpg
+  OK  archive chiffrée créée : dolibarr_2026-11-17_1057.tar.gz.gpg
   OK  archive chiffrée (AES, illisible sans la phrase)
   OK  copie hors serveur présente
 6. Perte de données puis restauration locale
