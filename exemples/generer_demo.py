@@ -13,7 +13,7 @@ SORTIE = Path(__file__).parent / "demo"
 FIN = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else date.today()
 DEBUT = date(FIN.year - 1, FIN.month, 1)
 rnd = random.Random(7)
-TGC = 0.11  # taux fictif appliqué à la démo
+TGC = 0.06  # prestations de service
 
 
 def ecrire(chemin, entetes, lignes):
