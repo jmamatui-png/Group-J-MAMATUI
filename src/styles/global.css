@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #071427;
+  --color-navy-900: #0b1f3a;
+  --color-navy-800: #142c4f;
+  --color-navy-700: #1f3b66;
+  --color-navy-100: #e6ebf2;
+  --color-navy-50: #f4f6f9;
+  --color-accent-500: #c9a227;
+  --color-accent-600: #a8861c;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-navy-900 font-sans antialiased; }
+  h1, h2, h3 { @apply font-serif tracking-tight; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-accent-500; }
+}
+
+@utility container-site { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors; }
+@utility btn-accent { @apply btn bg-accent-500 text-navy-950 hover:bg-accent-600; }
+@utility btn-outline { @apply btn border border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white; }
+@utility btn-outline-light { @apply btn border border-white/70 text-white hover:bg-white hover:text-navy-900; }
+/* Emplacement à compléter : volontairement visible. */
+@utility todo { @apply rounded border border-dashed border-amber-500 bg-amber-50 px-1.5 py-0.5 text-amber-900 text-[0.9em] font-medium; }
+
+@layer components {
+  .prose-legal h2 { @apply mt-10 mb-3 text-xl font-semibold; }
+  .prose-legal p, .prose-legal li { @apply leading-relaxed text-navy-800; }
+  .prose-legal ul { @apply list-disc pl-6 space-y-1 mb-3; }
+  .prose-legal p { @apply mb-3; }
+}

@@ -1,0 +1,36 @@
+---
+import { content } from '../i18n/content';
+import { routes, type Lang } from '../i18n/routes';
+import { entreprise } from '../config';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = content[lang].ui;
+const year = new Date().getFullYear();
+---
+<footer class="bg-navy-950 text-navy-100">
+  <div class="container-site grid gap-8 py-12 md:grid-cols-3">
+    <div>
+      <p class="font-serif text-lg font-bold text-white">MGE <span class="text-accent-500">Conseil</span></p>
+      <p class="mt-2 text-sm text-navy-100/80">{t.footerTagline}</p>
+    </div>
+    <nav aria-label="Pied de page" class="text-sm">
+      <ul class="space-y-2">
+        {(['offers', 'about', 'contact'] as const).map((k) => <li><a class="hover:text-accent-500" href={routes[k][lang]}>{t.nav[k]}</a></li>)}
+      </ul>
+    </nav>
+    <div class="text-sm">
+      <p>{entreprise.ville}, {lang === 'fr' ? entreprise.pays : 'New Caledonia'}</p>
+      {entreprise.email && <p class="mt-1"><a class="hover:text-accent-500" href={`mailto:${entreprise.email}`}>{entreprise.email}</a></p>}
+      {entreprise.linkedin && <p class="mt-1"><a class="hover:text-accent-500" href={entreprise.linkedin} rel="noopener">LinkedIn</a></p>}
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="container-site flex flex-col gap-2 py-5 text-xs text-navy-100/70 sm:flex-row sm:justify-between">
+      <p>© {year} {entreprise.nomCommercial}. {t.rights}</p>
+      <p class="flex gap-4">
+        <a class="hover:text-accent-500" href={routes.legal[lang]}>{t.legal}</a>
+        <a class="hover:text-accent-500" href={routes.privacy[lang]}>{t.privacy}</a>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Todo from '../components/Todo.astro';
+import { content } from '../i18n/content';
+import { routes, type Lang } from '../i18n/routes';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const o = content[lang].offers;
+---
+<Base lang={lang} routeKey="offers" title={o.title} description={o.description}>
+  <PageHeader title={o.h1} lead={o.lead} />
+  <section class="container-site py-12">
+    <nav aria-label={o.h1} class="flex flex-wrap gap-2">
+      {o.items.map((it) => <a href={`#${it.id}`} class="rounded-full border border-navy-100 px-3 py-1.5 text-sm hover:border-navy-900">{it.name}</a>)}
+    </nav>
+    <div class="mt-10 space-y-8">
+      {o.items.map((it) => (
+        <article id={it.id} class="scroll-mt-24 rounded-md border border-navy-100 p-6 sm:p-8">
+          <h2 class="text-2xl font-semibold">{it.name}</h2>
+          <p class="mt-2 text-lg text-navy-800">{it.pitch}</p>
+          <div class="mt-6 grid gap-6 md:grid-cols-3">
+            <div class="md:col-span-2">
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-accent-600">{o.deliverables}</h3>
+              <ul class="mt-3 space-y-2">
+                {it.items.map((d) => (
+                  <li class="flex gap-3 text-navy-800"><span aria-hidden="true" class="mt-2 h-1.5 w-1.5 shrink-0 bg-accent-500"></span>{d}</li>
+                ))}
+              </ul>
+            </div>
+            <div class="space-y-4 text-sm">
+              <div>
+                <h3 class="font-semibold uppercase tracking-wider text-accent-600">{o.forWho}</h3>
+                <p class="mt-2 text-navy-800">{it.forWho}</p>
+              </div>
+              <div>
+                <h3 class="font-semibold uppercase tracking-wider text-accent-600">{o.rhythm}</h3>
+                <p class="mt-2"><Todo lang={lang} label={o.rhythmTodo} /></p>
+              </div>
+              <a href={`${routes.contact[lang]}?offre=${it.id}`} class="btn-outline">{o.quote}</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="mt-8 text-sm text-navy-700">{o.disclaimer}</p>
+  </section>
+  <CtaBand lang={lang} />
+</Base>

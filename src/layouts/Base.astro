@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { content } from '../i18n/content';
+import { routes, langs, type Lang, type RouteKey } from '../i18n/routes';
+import { entreprise } from '../config';
+
+interface Props {
+  lang: Lang;
+  routeKey: RouteKey;
+  title: string;
+  description: string;
+  jsonLd?: boolean;
+  noindex?: boolean;
+}
+const { lang, routeKey, title, description, jsonLd = false, noindex = false } = Astro.props;
+const site = Astro.site!;
+const canonical = new URL(routes[routeKey][lang], site).href;
+const alternates = langs.map((l) => ({ l, href: new URL(routes[routeKey][l], site).href }));
+
+// Données structurées SEO local : uniquement des informations réelles (les champs vides sont omis).
+const address: Record<string, string> = {
+  '@type': 'PostalAddress',
+  addressLocality: entreprise.ville,
+  addressRegion: 'Nouvelle-Calédonie',
+  addressCountry: 'NC',
+};
+if (entreprise.adresse) address.streetAddress = entreprise.adresse;
+if (entreprise.codePostal) address.postalCode = entreprise.codePostal;
+const org: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': new URL('/#organisation', site).href,
+  name: entreprise.nomCommercial,
+  url: new URL('/', site).href,
+  description: content[lang].home.description,
+  address,
+  areaServed: [
+    { '@type': 'City', name: 'Nouméa' },
+    { '@type': 'AdministrativeArea', name: 'Nouvelle-Calédonie' },
+  ],
+  knowsLanguage: ['fr', 'en'],
+};
+if (entreprise.telephone) org.telephone = entreprise.telephone;
+if (entreprise.email) org.email = entreprise.email;
+if (entreprise.linkedin) org.sameAs = [entreprise.linkedin];
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.l} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={alternates[0].href} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="geo.region" content="NC" />
+    <meta name="geo.placename" content="Nouméa" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MGE Conseil" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'fr' ? 'en_US' : 'fr_FR'} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#0b1f3a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(org)} />}
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2">{content[lang].ui.skip}</a>
+    <Header lang={lang} routeKey={routeKey} />
+    <main id="contenu" class="flex-1"><slot /></main>
+    <Footer lang={lang} />
+  </body>
+</html>

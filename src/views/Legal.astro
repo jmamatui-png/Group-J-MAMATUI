@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Todo from '../components/Todo.astro';
+import V from '../components/Value.astro';
+import { content } from '../i18n/content';
+import { routes, type Lang } from '../i18n/routes';
+import { entreprise as e, hebergeur as h } from '../config';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const l = content[lang].legal;
+---
+<Base lang={lang} routeKey="legal" title={l.title} description={l.description}>
+  <PageHeader title={l.h1} />
+  <div class="container-site prose-legal max-w-3xl py-12">
+  {lang === 'fr' ? (
+    <>
+      <h2>Éditeur du site</h2>
+      <ul>
+        <li>Nom commercial : {e.nomCommercial}</li>
+        <li>Dénomination sociale : <V lang={lang} value={e.denominationSociale} label="dénomination sociale" /></li>
+        <li>Forme juridique : <V lang={lang} value={e.formeJuridique} label="forme juridique" /></li>
+        <li>Capital social : <V lang={lang} value={e.capitalSocial} label="capital social en XPF" /></li>
+        <li>Siège social : <V lang={lang} value={e.adresse} label="adresse" />, <V lang={lang} value={e.codePostal} label="code postal" /> {e.ville}, {e.pays}</li>
+        <li>N° RIDET : <V lang={lang} value={e.ridet} label="numéro RIDET" /></li>
+        <li>Immatriculation : <V lang={lang} value={e.rcs} label="RCS Nouméa" /></li>
+        <li>E-mail : <V lang={lang} value={e.email} label="e-mail" /></li>
+        <li>Téléphone : <V lang={lang} value={e.telephone} label="téléphone" /></li>
+        <li>Directeur de la publication : <V lang={lang} value={e.directeurPublication} label="nom du directeur de la publication" /></li>
+      </ul>
+      <h2>Activité</h2>
+      <p>MGE Conseil exerce une activité de conseil en gestion financière auprès des entreprises. MGE Conseil n’exerce pas d’activité d’expertise comptable ni de tenue de comptabilité réservée aux professionnels inscrits à l’Ordre, et n’accorde pas de crédit.</p>
+      <p>Statut réglementaire, le cas échéant : <V lang={lang} value={e.statutReglementaire} label="immatriculation / statut réglementaire éventuel (voir README)" /></p>
+      <h2>Hébergement</h2>
+      <ul>
+        <li>Hébergeur : <V lang={lang} value={h.nom} label="nom de l’hébergeur" /></li>
+        <li>Adresse : <V lang={lang} value={h.adresse} label="adresse de l’hébergeur" /></li>
+        <li>Contact : <V lang={lang} value={h.contact} label="contact de l’hébergeur" /></li>
+      </ul>
+      <h2>Propriété intellectuelle</h2>
+      <p>L’ensemble des contenus de ce site (textes, éléments graphiques, logo) est la propriété de {e.nomCommercial}, sauf mention contraire. Toute reproduction, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+      <h2>Responsabilité</h2>
+      <p>Les informations publiées sur ce site sont fournies à titre général et indicatif. Elles ne constituent ni un conseil personnalisé, ni une offre de financement. Toute décision doit faire l’objet d’une analyse adaptée à la situation de l’entreprise concernée.</p>
+      <h2>Données personnelles</h2>
+      <p>Le traitement des données transmises via le formulaire de contact est décrit dans la <a class="underline" href={routes.privacy.fr}>politique de confidentialité</a>.</p>
+      <h2>Droit applicable</h2>
+      <p>Le présent site et ses mentions légales sont soumis au droit applicable en Nouvelle-Calédonie. En cas de litige, et à défaut de résolution amiable, les juridictions de Nouméa seront compétentes.</p>
+      <p class="mt-10 text-sm">Dernière mise à jour : <Todo lang={lang} label="date" /></p>
+    </>
+  ) : (
+    <>
+      <p><em>This is a courtesy translation. In case of discrepancy, the <a class="underline" href={routes.legal.fr}>French version</a> prevails.</em></p>
+      <h2>Website publisher</h2>
+      <ul>
+        <li>Trading name: {e.nomCommercial}</li>
+        <li>Registered name: <V lang={lang} value={e.denominationSociale} label="registered name" /></li>
+        <li>Legal form: <V lang={lang} value={e.formeJuridique} label="legal form" /></li>
+        <li>Share capital: <V lang={lang} value={e.capitalSocial} label="share capital in XPF" /></li>
+        <li>Registered office: <V lang={lang} value={e.adresse} label="address" />, <V lang={lang} value={e.codePostal} label="postcode" /> {e.ville}, New Caledonia</li>
+        <li>RIDET number: <V lang={lang} value={e.ridet} label="RIDET number" /></li>
+        <li>Registration: <V lang={lang} value={e.rcs} label="Nouméa trade register" /></li>
+        <li>Email: <V lang={lang} value={e.email} label="email" /></li>
+        <li>Phone: <V lang={lang} value={e.telephone} label="phone" /></li>
+        <li>Publication director: <V lang={lang} value={e.directeurPublication} label="publication director" /></li>
+      </ul>
+      <h2>Activity</h2>
+      <p>MGE Conseil provides financial management advisory services to businesses. MGE Conseil does not provide statutory accounting services reserved for chartered accountants and does not grant credit.</p>
+      <h2>Hosting</h2>
+      <ul>
+        <li>Host: <V lang={lang} value={h.nom} label="host name" /></li>
+        <li>Address: <V lang={lang} value={h.adresse} label="host address" /></li>
+      </ul>
+      <h2>Liability</h2>
+      <p>Information on this website is general and for guidance only. It does not constitute personalised advice or an offer of financing.</p>
+      <h2>Governing law</h2>
+      <p>This website is governed by the law applicable in New Caledonia. The courts of Nouméa have jurisdiction over any dispute.</p>
+    </>
+  )}
+  </div>
+</Base>
