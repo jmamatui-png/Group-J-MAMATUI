@@ -1,0 +1,9 @@
+libelle;categorie;montant;frequence;prochaine_echeance;date_fin;sens
+Salaires;Salaires;3200000;mensuelle;30/11/2026;;décaissement
+Cotisations CAFAT;CAFAT;1150000;mensuelle;15/12/2026;;décaissement
+Loyer atelier;Loyers;450000;mensuelle;05/12/2026;;décaissement
+Échéance prêt camion;Emprunts;185000;mensuelle;10/12/2026;10/06/2027;décaissement
+Déclaration TGC;TGC;980000;trimestrielle;31/01/2027;;décaissement
+Prime de fin d'année;Salaires;1600000;ponctuelle;18/12/2026;;décaissement
+Ventes prévues non encore facturées (estimation);Ventes futures;1250000;hebdomadaire;31/12/2026;;encaissement
+Sous-location parking;Autres produits;60000;mensuelle;01/12/2026;;encaissement

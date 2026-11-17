@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+# Données clients réelles : jamais dans Git
+donnees_clients/
