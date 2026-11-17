@@ -1,0 +1,38 @@
+---
+import { content } from '../i18n/content';
+import { routes, type Lang, type RouteKey } from '../i18n/routes';
+interface Props { lang: Lang; routeKey: RouteKey }
+const { lang, routeKey } = Astro.props;
+const t = content[lang].ui;
+const other: Lang = lang === 'fr' ? 'en' : 'fr';
+const nav = (['home', 'offers', 'about', 'contact'] as const).map((k) => ({
+  key: k, href: routes[k][lang], label: t.nav[k],
+}));
+---
+<header class="sticky top-0 z-40 border-b border-navy-100 bg-white/95 backdrop-blur">
+  <div class="container-site flex h-16 items-center justify-between gap-4">
+    <a href={routes.home[lang]} class="flex items-baseline gap-1.5 font-serif text-xl font-bold text-navy-900">
+      MGE <span class="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-accent-600">Conseil</span>
+    </a>
+    <nav class="hidden items-center gap-7 md:flex" aria-label="Navigation principale">
+      {nav.map((n) => (
+        <a href={n.href} class:list={['text-sm font-medium hover:text-accent-600', n.key === routeKey ? 'text-accent-600' : 'text-navy-800']}
+           aria-current={n.key === routeKey ? 'page' : undefined}>{n.label}</a>
+      ))}
+      <a href={routes[routeKey][other]} hreflang={other} lang={other} title={t.switchLangLabel}
+         class="rounded border border-navy-100 px-2.5 py-1 text-xs font-semibold text-navy-800 hover:border-navy-900">{t.switchLang}</a>
+    </nav>
+    <details class="group relative md:hidden">
+      <summary class="flex cursor-pointer list-none items-center gap-2 rounded border border-navy-100 px-3 py-2 text-sm font-medium [&::-webkit-details-marker]:hidden">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        {t.menu}
+      </summary>
+      <div class="absolute right-0 mt-2 w-56 rounded-md border border-navy-100 bg-white p-2 shadow-lg">
+        {nav.map((n) => (
+          <a href={n.href} class="block rounded px-3 py-2.5 text-sm hover:bg-navy-50" aria-current={n.key === routeKey ? 'page' : undefined}>{n.label}</a>
+        ))}
+        <a href={routes[routeKey][other]} hreflang={other} lang={other} class="mt-1 block border-t border-navy-100 px-3 py-2.5 text-sm font-semibold">{t.switchLang}</a>
+      </div>
+    </details>
+  </div>
+</header>

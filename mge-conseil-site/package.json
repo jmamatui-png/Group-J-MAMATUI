@@ -1,0 +1,20 @@
+{
+  "name": "mge-conseil-site",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "astro build && node --test tests/*.test.mjs",
+    "a-completer": "node scripts/a-completer.mjs"
+  },
+  "engines": { "node": ">=18.20.8" },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.5",
+    "@tailwindcss/vite": "4.3.5",
+    "astro": "5.18.2",
+    "tailwindcss": "4.3.5"
+  }
+}

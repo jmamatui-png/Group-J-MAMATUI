@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Todo from '../components/Todo.astro';
+import V from '../components/Value.astro';
+import { content } from '../i18n/content';
+import { routes, type Lang } from '../i18n/routes';
+import { entreprise as e, dureeConservation } from '../config';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const p = content[lang].privacy;
+---
+<Base lang={lang} routeKey="privacy" title={p.title} description={p.description}>
+  <PageHeader title={p.h1} />
+  <div class="container-site prose-legal max-w-3xl py-12">
+  {lang === 'fr' ? (
+    <>
+      <h2>Responsable du traitement</h2>
+      <p><V lang={lang} value={e.denominationSociale} label="dénomination sociale" /> ({e.nomCommercial}), <V lang={lang} value={e.adresse} label="adresse" />, {e.ville}, {e.pays}. Contact : <V lang={lang} value={e.email} label="e-mail de contact données personnelles" />.</p>
+      <h2>Données collectées</h2>
+      <p>Via le formulaire de contact : nom et prénom, entreprise, adresse e-mail, téléphone (facultatif), objet et contenu du message. Aucune donnée n’est collectée à votre insu.</p>
+      <p>Si vous nous contactez par WhatsApp, vos échanges transitent par ce service, édité par une société tierce et soumis à ses propres conditions.</p>
+      <h2>Finalités et fondement</h2>
+      <p>Vos données servent uniquement à répondre à votre demande et, le cas échéant, à préparer une proposition commerciale. Ce traitement repose sur votre consentement, exprimé en cochant la case prévue, et sur les mesures précontractuelles prises à votre demande. Vos données ne sont ni vendues, ni cédées, ni utilisées à des fins de prospection sans votre accord.</p>
+      <h2>Destinataires</h2>
+      <ul>
+        <li>{e.nomCommercial}, seul destinataire des demandes ;</li>
+        <li>Formspree, prestataire technique d’acheminement des formulaires, établi aux États-Unis : vos données sont donc transférées hors de Nouvelle-Calédonie et de l’Union européenne. <Todo lang={lang} label="garanties encadrant ce transfert, à vérifier dans les conditions de Formspree" /></li>
+        <li>l’hébergeur du site, pour les journaux techniques de connexion.</li>
+      </ul>
+      <h2>Durée de conservation</h2>
+      <p><V lang={lang} value={dureeConservation} label="durée de conservation (ex. 3 ans après le dernier contact — à valider)" /></p>
+      <h2>Vos droits</h2>
+      <p>Conformément à la loi n° 78-17 du 6 janvier 1978 modifiée relative à l’informatique, aux fichiers et aux libertés, applicable en Nouvelle-Calédonie, vous disposez d’un droit d’accès, de rectification, d’effacement, d’opposition et de limitation du traitement de vos données, ainsi que du droit de définir des directives relatives à leur sort après votre décès. Pour les exercer, écrivez à : <V lang={lang} value={e.email} label="e-mail de contact" />.</p>
+      <p>Vous pouvez également introduire une réclamation auprès de la Commission nationale de l’informatique et des libertés (CNIL), compétente en Nouvelle-Calédonie : <a class="underline" href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>.</p>
+      <h2>Cookies</h2>
+      <p>Ce site n’utilise aucun cookie publicitaire ni outil de mesure d’audience. Aucun bandeau de consentement n’est donc nécessaire. Si un outil de statistiques est ajouté, cette politique sera mise à jour.</p>
+      <h2>Sécurité</h2>
+      <p>Le site est servi exclusivement en HTTPS. Les demandes reçues sont conservées dans un espace dont l’accès est restreint.</p>
+      <p class="mt-10 text-sm">Dernière mise à jour : <Todo lang={lang} label="date" /></p>
+    </>
+  ) : (
+    <>
+      <p><em>This is a courtesy translation. In case of discrepancy, the <a class="underline" href={routes.privacy.fr}>French version</a> prevails.</em></p>
+      <h2>Data controller</h2>
+      <p><V lang={lang} value={e.denominationSociale} label="registered name" /> ({e.nomCommercial}), {e.ville}, New Caledonia. Contact: <V lang={lang} value={e.email} label="privacy contact email" />.</p>
+      <h2>Data collected</h2>
+      <p>Through the contact form: name, company, email address, phone number (optional), subject and message. If you contact us via WhatsApp, your messages pass through that third-party service under its own terms.</p>
+      <h2>Purpose and legal basis</h2>
+      <p>Your data is used solely to answer your request and, where relevant, to prepare a proposal. Processing is based on your consent and on pre-contractual steps taken at your request. Your data is never sold.</p>
+      <h2>Recipients</h2>
+      <p>{e.nomCommercial}; Formspree, the form-processing provider based in the United States (data is therefore transferred outside New Caledonia and the European Union); and the website host for technical logs.</p>
+      <h2>Retention period</h2>
+      <p><V lang={lang} value={dureeConservation} label="retention period" /></p>
+      <h2>Your rights</h2>
+      <p>Under French Data Protection Act No. 78-17 of 6 January 1978, as amended and applicable in New Caledonia, you have the right to access, rectify, erase, object to and restrict the processing of your data. Contact: <V lang={lang} value={e.email} label="contact email" />. You may lodge a complaint with the CNIL (<a class="underline" href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>).</p>
+      <h2>Cookies</h2>
+      <p>This website uses no advertising or analytics cookies.</p>
+    </>
+  )}
+  </div>
+</Base>

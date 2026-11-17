@@ -1,0 +1,8 @@
+---
+// Affiche une valeur de configuration, ou un emplacement « À compléter » si elle est vide.
+import type { Lang } from '../i18n/routes';
+import Todo from './Todo.astro';
+interface Props { lang: Lang; value: string; label: string }
+const { lang, value, label } = Astro.props;
+---
+{value ? <>{value}</> : <Todo lang={lang} label={label} />}
